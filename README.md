@@ -12,6 +12,8 @@ Text classification for imas_cg words. use SVN(Confidence Weighted Learning)
 ## Requirement
 動作確認は、CentOS 6.9, Python 2.7.11, Jubatus 1.0.2, MeCab 0.996, 最新のmecab-ipadic-NEologdで行っています。
 
+また、添付のサンプルモデルファイルはJubatus 1.0.2専用です。他のバージョンではロードできません。
+
 - Python (2.7以降)
 - Jubatus
 - MeCab

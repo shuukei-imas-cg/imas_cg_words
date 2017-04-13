@@ -1,0 +1,26 @@
+{
+  "method": "CW",
+  "converter": {
+    "string_filter_types": {},
+    "string_filter_rules": [],
+    "string_types": {
+      "2gram": { "method": "ngram", "char_num": "2" },
+      "mecab": {
+          "method": "dynamic",
+          "path": "libmecab_splitter.so",
+          "function": "create",
+          "arg": "-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd",
+          "ngram": "1",
+          "base": "false",
+          "include_features": "*",
+          "exclude_features": ""
+       }
+    },
+    "string_rules": [
+      {"key": "serif", "type": "mecab", "sample_weight": "bin", "global_weight": "bin"}
+    ]
+  },
+  "parameter": {
+    "regularization_weight" : 1.0
+  }
+}

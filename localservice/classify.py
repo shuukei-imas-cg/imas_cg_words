@@ -12,8 +12,8 @@ def predict():
         words = raw_input().decode("utf-8")
         datum = Datum({'serif': words})
         res = client.classify([datum])
-        predicted_dic = sorted(res[0], key=lambda x: -x.score)
-        for result in predicted_dic:
+        sorted_res = sorted(res[0], key=lambda x: -x.score)
+        for result in sorted_res:
             print("label:{0} score:{1}".format(result.label, result.score))
 
 

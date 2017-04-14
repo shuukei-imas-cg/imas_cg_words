@@ -1,12 +1,9 @@
 # -*- coding:utf-8 -*-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
+from __future__ import absolute_import, print_function, unicode_literals
 
 import jubatus
-from jubatus.common import Datum
-
 from config import host, port, name
+from jubatus.common import Datum
 
 
 def predict():
@@ -20,9 +17,5 @@ def predict():
             print("label:{0} score:{1}".format(result.label, result.score))
 
 
-def main():
-    predict()
-
-
 if __name__ == '__main__':
-    main()
+    predict()

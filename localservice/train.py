@@ -1,16 +1,13 @@
 # -*- coding:utf-8 -*-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
+from __future__ import absolute_import, print_function, unicode_literals
 
 import csv
 import random
 import sys
 
 import jubatus
-from jubatus.common import Datum
-
 from config import host, port, name
+from jubatus.common import Datum
 
 
 def train(client, csv_filename):

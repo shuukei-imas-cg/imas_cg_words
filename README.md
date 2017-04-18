@@ -73,7 +73,7 @@ pip install cython falcon gunicorn
 cd webapi/
 python server.py
 # クエリ
-curl http://localhost:8080/imascg-words/v1/predict/妄想
+curl http://localhost:8080/imas_cg-words/v1/predict/妄想
 [
     {
         "score": 1.2635555267333984,

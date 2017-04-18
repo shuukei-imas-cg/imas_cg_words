@@ -32,7 +32,7 @@ Text classification for imas_cg words. use SVN(Confidence Weighted Learning)
 
 - webapi
 
-    外部に公開可能なWeb APIを構成するサンプルです(予定)
+    外部に公開可能なWeb APIを構成するサンプルです
 
 - frontend
 
@@ -59,8 +59,46 @@ python classify.py
 ~~~
 学習済みモデルファイルsample.jubatusには、3人のアイドル(喜多日菜子、棟方愛海、浅利七海)の台詞から学習した特徴のみが保存されています。
 
+
 ### webapi
-準備中
+WebアプリケーションフレームワークとしてFalcon、WSGIサーバーとしてGunicornを使用します。
+
+1. あらかじめjubaclassifierの起動まで行っておく(localserviceの手順を参考)
+2. Falcon, Gunicornのインストール
+3. (Python組み込みのsimple_serverを使用して)ローカルホストで起動する
+~~~
+# Falcon, Gunicornをインストールする
+pip install cython falcon gunicorn
+# localhostでwebapiサーバを起動
+cd webapi/
+python server.py
+# クエリ
+curl http://localhost:8080/imascg-words/v1/predict/妄想
+[
+    {
+        "score": 1.2635555267333984,
+        "name:": "喜多日菜子"
+    },
+    {
+        "score": -0.9001807570457458,
+        "name:": "棟方愛海"
+    },
+    {
+        "score": -1.0048713684082031,
+        "name:": "浅利七海"
+    }
+]
+~~~
+curlでクエリを投げて上記のように表示されれば正常に動作しています。
+
+外部からもアクセス可能なWeb APIとして公開する場合、simple_serverでは力不足ですので、以下のようにGunicornを用います。Gunicornから起動する場合、config.pyで設定したIPアドレスとポート番号は無視されることに注意します。
+~~~
+gunicorn -b (IPアドレス):(ポート番号) server:api &
+# ワーカ数やログファイルを指定する場合
+gunicorn -w 4 -b (IPアドレス):(ポート番号) --access-logfile log/access.log --error-logfile log/error.log server:api &
+~~~
+
+server.pyのjson.dumpsのindent=4は可読性のために設定してあります。本番では削除しても良いでしょう。
 
 ### frontend
 準備中

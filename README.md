@@ -57,7 +57,9 @@ cd ..
 cd localservice/
 python classify.py
 ~~~
-学習済みモデルファイルsample.jubatusには、3人のアイドル(喜多日菜子、棟方愛海、浅利七海)の台詞から学習した特徴のみが保存されています。
+
+学習済みモデルファイルsample.jubatusには、3人のアイドル(喜多日菜子、棟方愛海、浅利七海)の台詞から学習した特徴のみが保存されています。また、mecab-ipadic-NEologdのインストール先が/usr/local/lib/mecab/dic/mecab-ipadic-neologdに固定されています。
+mecab-ipadic-NEologdのインストール先が異なる環境で実行する場合は、シンボリックリンクを張るか、近日リリース予定の[jubakit](https://github.com/jubatus/jubakit) 0.4.3を使用してモデル内に埋まっている設定を書き換えてください。
 
 
 ### webapi

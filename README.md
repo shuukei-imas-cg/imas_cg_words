@@ -68,7 +68,8 @@ WebアプリケーションフレームワークとしてFalcon、WSGIサーバ�
 3. (Python組み込みのsimple_serverを使用して)ローカルホストで起動する
 ~~~
 # Falcon, Gunicornをインストールする
-pip install cython falcon gunicorn
+pip install cython gunicorn
+pip install --no-binary :all: falcon
 # localhostでwebapiサーバを起動
 cd webapi/
 python server.py

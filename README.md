@@ -8,6 +8,9 @@ Text classification for imas_cg words. use SVN(Confidence Weighted Learning)
 
 - http://www.shuukei.info/imas_cg_words/
 
+本リポジトリの内容の解説記事を書きました。
+- http://qiita.com/shuukei-imas-cg/items/ea501e62970b309ceea4
+
 
 ## Requirement
 動作確認は、CentOS 6.9, Python 2.7.11, Jubatus 1.0.2, MeCab 0.996, 最新のmecab-ipadic-NEologdで行っています。

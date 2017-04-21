@@ -24,7 +24,7 @@ def predict(words):
     sorted_res = sorted(res[0], key=lambda x: -x.score)
     del client
 
-    results = [{"name:": resp.label, "score": resp.score} for resp in sorted_res if resp.score != 0]
+    results = [{"name": resp.label, "score": resp.score} for resp in sorted_res if resp.score != 0]
     return results
 
 

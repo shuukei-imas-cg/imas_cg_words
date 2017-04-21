@@ -104,9 +104,29 @@ gunicorn -w 4 -b (IPアドレス):(ポート番号) --access-logfile log/access.
 server.pyのjson.dumpsのindent=4は可読性のために設定してあります。本番では削除しても良いでしょう。
 
 ### frontend
-準備中
+Vue.js 2.0を用いたSPA(Single Page Application)です。事前にnode.jsをインストールしておく必要があります。
+~~~
+cd frontend/imas_cg_words/
+
+# 必要パッケージのインストール。node_modules/ ディレクトリ以下にインストールされる(時間がかかります)
+npm install
+# ローカルサーバで起動
+npm run dev
+~~~
+Vue.jsのwebpackボイラープレートを使用しています。npm run devを実行すると、ブラウザが起動し、http://localhost:8080でページが開きます。
+
+frontend/imas_cg_words/src/main.jsの、Vue.http.options.rootの値を、自分で起動したWebAPIのURIに書き換えてください。TEXTAREAに適当なテキストを入力して判定ボタンを押し、結果が表示されれば成功です。
+
+#### ビルドとデプロイ
+~~~
+npm run build
+~~~
+frontend/imas_cg_words/dist/ 以下にビルドされたhtml, js, cssなどのファイルが生成されますので、適当なWebサーバに配置してください。index.htmlをローカルでブラウザから読み込んでも動作しません。
 
 
 ## Copyrights
 - source: MIT License
 - Pre-trained Model: All rights reserved.
+
+## Author
+[@shuukei_imas_cg](https://twitter.com/shuukei_imas_cg)

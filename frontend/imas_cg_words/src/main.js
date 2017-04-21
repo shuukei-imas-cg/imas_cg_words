@@ -5,7 +5,7 @@ import App from './App'
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
-Vue.http.options.root = 'http://api.shuukei.info:8080/imas_cg-words/v1'
+Vue.http.options.root = 'http://(YOUR WebAPI HOST And PORT)/imas_cg-words/v1'
 
 Vue.config.productionTip = false
 

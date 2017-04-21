@@ -36,7 +36,7 @@ Text classification for imas_cg words. use SVN(Confidence Weighted Learning)
 
 - frontend
 
-    上記Web API用のフロントエンドです(予定)
+    上記Web API用のフロントエンドです
 
 
 ## 利用手順

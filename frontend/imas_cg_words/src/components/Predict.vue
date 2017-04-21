@@ -80,7 +80,6 @@ export default {
       for (var i = 0; i < this.predict_val.length; i++) {
         ret[i] = {'number': i + 1, 'name': this.predict_val[i]['name'], 'score': this.predict_val[i]['score']}
       }
-      this.selected_idol = this.predict_val[0]['name']
       return ret
     },
     btn_disable: function () {

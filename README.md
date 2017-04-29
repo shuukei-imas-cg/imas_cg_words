@@ -15,7 +15,7 @@ Text classification for imas_cg words. use SVN(Confidence Weighted Learning)
 ## Requirement
 動作確認は、CentOS 6.9, Python 2.7.11, Jubatus 1.0.2, MeCab 0.996, 最新のmecab-ipadic-NEologdで行っています。
 
-また、添付のサンプルモデルファイルはJubatus 1.0.2専用です。他のバージョンではロードできません。
+また、添付のサンプルモデルファイルはJubatus 1.0.3および1.0.2用です。他のバージョンでは動作の保証はありません。
 
 - Python (2.7以降)
 - Jubatus
@@ -55,14 +55,14 @@ CentOS 6.9の場合のインストール手順を以下に示します。Ubuntu�
 git clone https://github.com/shuukei-imas-cg/imas_cg_words.git
 cd imas_cg_words/jubatus
 # mecab-ipadic-NEologdのインストール先によっては、serif.jsonの変更が必要になる場合があります
-jubaclassifier -f serif.json -m model/sample.jubatus &
+jubaclassifier -f serif.json -m model/sample.1.0.2.jubatus &
 cd ..
 cd localservice/
 python classify.py
 ~~~
 
 学習済みモデルファイルsample.jubatusには、3人のアイドル(喜多日菜子、棟方愛海、浅利七海)の台詞から学習した特徴のみが保存されています。また、mecab-ipadic-NEologdのインストール先が/usr/local/lib/mecab/dic/mecab-ipadic-neologdに固定されています。
-mecab-ipadic-NEologdのインストール先が異なる環境で実行する場合は、シンボリックリンクを張るか、近日リリース予定の[jubakit](https://github.com/jubatus/jubakit) 0.4.3を使用してモデル内に埋まっている設定を書き換えてください。
+mecab-ipadic-NEologdのインストール先が異なる環境で実行する場合は、シンボリックリンクを張るか、[jubakit](https://github.com/jubatus/jubakit) 0.4.3以降に同梱のjubamodelを使用してモデル内に埋まっている設定を書き換えてください。
 
 
 ### webapi
